@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "shopping-mall-train"
+version = "0.1.0"
+description = ""
+authors = ["sherry-lxy <lixinyun1997@yahoo.co.jp>"]
+readme = "README.md"
+packages = [{include = "shopping_mall_train"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.23.4"
+pytorch-lightning = "^1.7.7"
+timm = "^0.6.11"
+pandas = "^1.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.16.4"
+black = "^22.10.0"
+
+[tool.poe.tasks]
+pytorch = "pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116"
+format = "black ."
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
